@@ -4,7 +4,7 @@ import { Filters } from '@/components/shared/filters';
 
 import { Header } from '@/components/shared/header';
 import { Pagination } from '@/components/shared/pagination';
-import { PizzaCard } from '@/components/shared/pizza-card';
+import { ProductsGroupList } from '@/components/shared/products-group-list';
 import { SortPopup } from '@/components/shared/sort-popup';
 import { Title } from '@/components/shared/title';
 
@@ -69,14 +69,11 @@ export default function Home() {
             <Filters />
           </div>
           <div className="flex-1">
-            <Title text="Пиццы" size="lg" className="font-extrabold mb-5" />
-            <div className="grid grid-cols-3 gap-[50px]">
-              <PizzaCard />
-              <PizzaCard />
-              <PizzaCard />
-              <PizzaCard />
-              <PizzaCard />
+            <div className="flex flex-col gap-16">
+              <ProductsGroupList title="Пиццы" items={[1, 2, 3, 4, 5]} />
+              <ProductsGroupList title="Комбо" items={[1, 2, 3, 4, 5]} />
             </div>
+
             <div className="flex items-center gap-6 mt-12">
               <Pagination pageCount={3} />
               <span className="text-sm text-gray-400">5 из 65</span>
